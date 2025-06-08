@@ -5,9 +5,9 @@ from datetime import datetime
 import numpy as np
 
 # Load model dan scaler
-model = joblib.load('https://raw.githubusercontent.com/shabrinaar/app/main/model_unitA.pkl')
-scaler_X = joblib.load('https://raw.githubusercontent.com/shabrinaar/app/main/scaler_X.pkl')
-scaler_y = joblib.load('https://raw.githubusercontent.com/shabrinaar/app/main/scaler_y.pkl')
+model = joblib.load('model_unitA.pkl')
+scaler_X = joblib.load('scaler_X.pkl')
+scaler_y = joblib.load('scaler_y.pkl')
 
 st.title("📦 Prediksi Unit A yang Terjual")
 st.write("Pilih tanggal untuk memprediksi jumlah Unit A yang terjual.")
