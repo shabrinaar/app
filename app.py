@@ -15,8 +15,8 @@ st.write("Pilih tanggal untuk memprediksi jumlah Unit A yang terjual.")
 # Input tanggal
 tanggal = st.date_input("Pilih Tanggal", datetime.today())
 
-# Ambil hari dari tanggal (0=Senin, ..., 6=Minggu)
-day_of_week = tanggal.weekday()
+# Tentukan apakah tanggal tersebut weekend (Sabtu/Minggu)
+day_flag = 1 if tanggal.weekday() >= 5 else 0
 
 # Nilai default fitur lain (misal dari data training, bisa disesuaikan)
 default_grp_a = 2.47
@@ -35,7 +35,7 @@ if st.button("Prediksi"):
         'Unit_B': default_unit_b,
         'GRP_A_adstock': default_grp_a,
         'GRP_B_adstock': default_grp_b,
-        'Day': day_of_week,
+        'Day': day_flag,
         'Toko1': default_toko1,
         'Toko3': default_toko3,
         'Toko4': default_toko4,
