@@ -15,8 +15,11 @@ st.write("Pilih tanggal untuk memprediksi jumlah Unit A yang terjual.")
 # Input tanggal
 tanggal = st.date_input("Pilih Tanggal", datetime.today())
 
-# Tentukan apakah tanggal tersebut weekend (Sabtu/Minggu)
-day_flag = 1 if tanggal.weekday() >= 5 else 0
+# Tentukan nilai Day otomatis berdasarkan tanggal yang dipilih
+if tanggal.weekday() >= 5:
+    default_day = 1  # Weekend
+else:
+    default_day = 0  # Weekday
 
 # Nilai default fitur lain (misal dari data training, bisa disesuaikan)
 default_grp_a = 2.47
@@ -27,7 +30,6 @@ default_toko3 = 1
 default_toko4 = 1
 default_toko5 = 1
 default_toko6 = 0
-default_day = 0
 
 if st.button("Prediksi"):
     # Buat DataFrame dengan urutan kolom sesuai saat training
@@ -35,7 +37,7 @@ if st.button("Prediksi"):
         'Unit_B': default_unit_b,
         'GRP_A_adstock': default_grp_a,
         'GRP_B_adstock': default_grp_b,
-        'Day': day_flag,
+        'Day': default_day,
         'Toko1': default_toko1,
         'Toko3': default_toko3,
         'Toko4': default_toko4,
