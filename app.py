@@ -9,7 +9,7 @@ model = joblib.load('model_unitA.pkl')
 scaler_X = joblib.load('scaler_X.pkl')
 scaler_y = joblib.load('scaler_y.pkl')
 
-st.title("📦 Prediksi Unit A yang Terjual")
+st.title("🧴 Prediksi Unit A yang Terjual")
 st.write("Pilih tanggal untuk memprediksi jumlah Unit A yang terjual.")
 
 # Input tanggal
