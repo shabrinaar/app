@@ -29,9 +29,9 @@ default_day = 0
 if st.button("Prediksi"):
     # Buat DataFrame dengan urutan kolom sesuai saat training
     input_df = pd.DataFrame([{
+        'Unit_B': default_unit_b,
         'GRP_A_adstock': default_grp_a,
         'GRP_B_adstock': default_grp_b,
-        'Unit_B': default_unit_b,
         'Day': default_day,
         'Toko1': default_toko1,
         'Toko3': default_toko3,
